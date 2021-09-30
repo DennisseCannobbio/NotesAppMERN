@@ -10,8 +10,8 @@ app.set('port', process.env.PORT || 4000)
 app.use(express.json())
 
 // Routes
-app.get('/api/users', (req, res) => res.send('Users Routes'))
+app.use('/api/notes', require('./routes/notes'))
 
-app.get('/api/notes', (req, res) => res.send('Notes Routes'))
+app.use('/api/users', require('./routes/users'))
 
 module.exports = app
